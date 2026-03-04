@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#111827">
+
+  <title>お問い合わせ｜出張買取信誠 SHINSEI</title>
+  <meta name="description" content="LINE（写真OK）または電話でお問い合わせ。フォームは任意で送信先設定が必要です。">
+  <link rel="canonical" href="https://weichuimengu-bit.github.io/qscftynji/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="出張買取信誠 SHINSEI">
+  <meta property="og:title" content="お問い合わせ｜出張買取信誠 SHINSEI">
+  <meta property="og:description" content="LINE（写真OK）または電話でお問い合わせ。フォームは任意で送信先設定が必要です。">
+  <meta property="og:url" content="https://weichuimengu-bit.github.io/qscftynji/contact.html">
+  <meta property="og:image" content="https://weichuimengu-bit.github.io/qscftynji/assets/img/ogp.png">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="出張買取信誠 SHINSEI トップへ"><span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand__jp">出張買取信誠</span>
+      <span class="brand__en">SHINSEI</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="メニューを開く">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="グローバルナビ">
+      <a href="items.html">買取品目</a>
+      <a href="flow.html">買取の流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="company.html">会社概要</a>
+      <a href="contact.html" class="nav-cta">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="container">
+    <h1>お問い合わせ</h1>
+    <p class="lead">おすすめはLINEです（写真OK）。操作が不安な方は電話をご利用ください。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cards">
+      <article class="card">
+        <h2 class="h3">LINE（おすすめ）</h2>
+        <p>品目・点数を送ってください。写真があるとスムーズです。</p>
+        <a class="btn btn--primary btn--full" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener">LINEで無料相談</a>
+        <p class="note">例：時計2点、バッグ1点。写真は1〜3枚でOK。</p>
+      </article>
+
+      <article class="card">
+        <h2 class="h3">電話</h2>
+        <p>操作が不安な方／お急ぎの方はこちら。</p>
+        <a class="btn btn--outline btn--full" href="tel:09090185664">090-9018-5664</a>
+        <a class="btn btn--ghost btn--full" href="tel:0666548738">06-6654-8738</a>
+        <p class="note">受付時間：<strong>7:00〜22:00</strong></p>
+      </article>
+
+      <article class="card">
+        <h2 class="h3">フォーム（任意）</h2>
+        <p class="muted">静的サイトでは送信先が必要です。フォームを使う場合は送信先サービスを設定してください。</p>
+        <ul class="bullets">
+          <li>送信先URL（Formspree等）：<strong>{要確認}</strong></li>
+          <li>メールアドレス：<strong>{要確認}</strong></li>
+        </ul>
+        <a class="btn btn--outline btn--full" href="contact.html#form">フォームを表示</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="form">
+  <div class="container">
+    <h2>お問い合わせフォーム（任意）</h2>
+    <p class="muted">※送信先設定が未完了の場合は送信できません。</p>
+
+    <form class="form" id="contactForm">
+      <div class="form-row">
+        <label for="name">お名前</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="form-row">
+        <label for="tel">電話番号（任意）</label>
+        <input id="tel" name="tel" type="tel" autocomplete="tel">
+      </div>
+
+      <div class="form-row">
+        <label for="address">ご住所（任意）</label>
+        <input id="address" name="address" type="text" autocomplete="street-address" placeholder="例：大阪市東住吉区（詳細は後でOK）">
+      </div>
+
+      <div class="form-row">
+        <label for="message">お問い合わせ内容</label>
+        <textarea id="message" name="message" rows="6" required placeholder="例：時計2点、ブランドバッグ1点。訪問希望日は◯月◯日〜"></textarea>
+      </div>
+
+      <button class="btn btn--primary" type="submit">送信する</button>
+      <p class="note" id="formNote">送信先：<strong>FORM_ENDPOINT_HERE</strong></p>
+
+    <div class="card" style="margin-top:14px">
+      <h3 class="h3">フォーム送信先の設定（Formspree）</h3>
+      <ol class="bullets">
+        <li>Formspreeでフォームを作成 → エンドポイントURLを取得</li>
+        <li><code>FORM_ENDPOINT_HERE</code> を、あなたのURL（例：<code>https://formspree.io/f/xxxxxx</code>）に置換</li>
+      </ol>
+      <p class="muted">※送信先が未設定の場合は、送信できないようにしています（LINE/電話をご利用ください）。</p>
+    </div>
+
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand__name">出張買取信誠 <span class="muted">SHINSEI</span></div>
+      <div class="footer-brand__meta">全国対応（離島を除く）・訪問日時は要相談</div>
+      <div class="footer-brand__meta">運営：株式会社RoyGBiv</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+
+    <div class="footer-contact">
+      <div class="footer-contact__row">
+        <span class="label">電話</span>
+        <a href="tel:09090185664">090-9018-5664</a>
+        <span class="muted"> / </span>
+        <a href="tel:0666548738">06-6654-8738</a>
+      </div>
+      <div class="footer-contact__row">
+        <span class="label">LINE</span>
+        <a href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener">友だち追加</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© 2026 出張買取信誠 SHINSEI. All rights reserved.</small>
+  </div>
+</footer>
+
+<!-- Mobile CTA bar -->
+<div class="cta-bar" role="region" aria-label="お問い合わせ（固定）">
+  <a class="cta-bar__btn cta-bar__btn--tel" href="tel:09090185664" aria-label="電話で問い合わせ（090-9018-5664）">
+    電話
+    <span class="cta-bar__sub">090-9018-5664</span>
+  </a>
+  <a class="cta-bar__btn cta-bar__btn--line" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener" aria-label="LINEで問い合わせ">
+    LINE
+    <span class="cta-bar__sub">写真でもOK</span>
+  </a>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

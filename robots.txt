@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://weichuimengu-bit.github.io/qscftynji/sitemap.xml
