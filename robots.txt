@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://weichuimengu-bit.github.io/qscftynji/sitemap.xml
+Sitemap: https://weichuimengu-bit.github.io/sxtutixyou66kaitori/sitemap.xml
