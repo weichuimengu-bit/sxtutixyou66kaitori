@@ -43,7 +43,7 @@
       e.preventDefault();
       const endpoint = (form.getAttribute("action") || ""); // contact.html の action にFormspreeエンドポイントを入れる
       if (!endpoint) {
-        alert('フォーム送信先が未設定です。LINEまたは電話をご利用ください。');
+        alert('送信できませんでした。LINEまたは電話をご利用ください。');
         return;
       }
       const fd = new FormData(form);

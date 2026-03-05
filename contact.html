@@ -8,12 +8,12 @@
 <meta name="theme-color" content="#111827">
 
   <title>お問い合わせ｜信誠 SHINSEI</title>
-  <meta name="description" content="LINE（写真OK）または電話でお問い合わせ。フォームは任意で送信先設定が必要です。">
+  <meta name="description" content="LINE（写真OK）・電話・フォームでお問い合わせ。おすすめはLINEです。">
   <link rel="canonical" href="https://weichuimengu-bit.github.io/sxtutixyou66kaitori/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="信誠 SHINSEI">
   <meta property="og:title" content="お問い合わせ｜信誠 SHINSEI">
-  <meta property="og:description" content="LINE（写真OK）または電話でお問い合わせ。フォームは任意で送信先設定が必要です。">
+  <meta property="og:description" content="LINE（写真OK）・電話・フォームでお問い合わせ。おすすめはLINEです。">
   <meta property="og:url" content="https://weichuimengu-bit.github.io/sxtutixyou66kaitori/contact.html">
   <meta property="og:image" content="https://weichuimengu-bit.github.io/sxtutixyou66kaitori/ogp.png">
 </head>
@@ -70,11 +70,8 @@
 
       <article class="card">
         <h2 class="h3">フォーム（任意）</h2>
-        <p class="muted">静的サイトでは送信先が必要です。フォームを使う場合は送信先サービスを設定してください。</p>
-        <ul class="bullets">
-          <li>送信先URL（Formspree等）：<strong>{要確認}</strong></li>
-          <li>メールアドレス：<strong>{要確認}</strong></li>
-        </ul>
+        <p>LINEが難しい方は、フォームからもお問い合わせいただけます。</p>
+
         <a class="btn btn--outline btn--full" href="contact.html#form">フォームを表示</a>
       </article>
     </div>
@@ -84,27 +81,16 @@
 <section class="section section--alt" id="form">
   <div class="container">
     <h2>お問い合わせフォーム（任意）</h2>
-    <p class="muted">※送信先設定が未完了の場合は送信できません。</p>
+    
 
     <form class="form" id="contactForm" action="https://formspree.io/f/xeelpnpg" method="POST">
       <div class="form-row">
         <label for="name">お名前</label>
         <input id="name" name="name" type="text" autocomplete="name" required>
       </div>
-
-      <div class="form-row">
-        <label for="tel">電話番号（任意）</label>
-        <input id="tel" name="tel" type="tel" autocomplete="tel">
-      </div>
-
-      <div class="form-row">
-        <label for="address">ご住所（任意）</label>
-        <input id="address" name="address" type="text" autocomplete="street-address" placeholder="例：大阪市東住吉区（詳細は後でOK）">
-      </div>
-
       <div class="form-row">
         <label for="message">お問い合わせ内容</label>
-        <textarea id="message" name="message" rows="6" required placeholder="例：時計2点、ブランドバッグ1点。訪問希望日は◯月◯日〜"></textarea>
+        <textarea id="message" name="message" rows="6" required placeholder="例：品目・点数（だいたい）／ご希望日時／市区町村（任意）"></textarea>
       </div>
 
       <button class="btn btn--primary" type="submit">送信する</button>
