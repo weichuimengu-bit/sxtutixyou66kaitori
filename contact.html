@@ -16,6 +16,24 @@
   <meta property="og:description" content="LINE（写真OK）・電話・フォームでお問い合わせ。おすすめはLINEです。">
   <meta property="og:url" content="https://weichuimengu-bit.github.io/sxtutixyou66kaitori/contact.html">
   <meta property="og:image" content="https://weichuimengu-bit.github.io/sxtutixyou66kaitori/ogp.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "信誠 SHINSEI",
+  "legalName": "株式会社RoyGBiv",
+  "url": "https://weichuimengu-bit.github.io/sxtutixyou66kaitori/",
+  "telephone": ["06-6654-8738", "090-9018-5664"],
+  "email": "weichuimengu@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "大阪府大阪市東住吉区公園南矢田2丁目16-19 公園南2山本-C号",
+    "postalCode": "546-0024",
+    "addressCountry": "JP"
+  },
+  "areaServed": "JP"
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">本文へスキップ</a>
@@ -56,7 +74,7 @@
       <article class="card">
         <h2 class="h3">LINE（おすすめ）</h2>
         <p>品目・点数を送ってください。写真があるとスムーズです。</p>
-        <a class="btn btn--primary btn--full" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener">LINEで無料相談</a>
+        <a class="btn btn--primary btn--full" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener noreferrer">LINEで無料相談</a>
         <p class="note">例：時計2点、バッグ1点。古銭は年号/枚数、骨董は種類/サイズ。写真は1〜3枚でOK。</p>
       </article>
 
@@ -80,17 +98,28 @@
 
 <section class="section section--alt" id="form">
   <div class="container">
-    <h2>お問い合わせフォーム（任意）</h2>
+    <h2>お問い合わせフォーム</h2>
     
 
     <form class="form" id="contactForm" action="https://formspree.io/f/xeelpnpg" method="POST">
       <div class="form-row">
-        <label for="name">お名前</label>
+        <label for="name">お名前（必須）</label>
         <input id="name" name="name" type="text" autocomplete="name" required>
       </div>
+
       <div class="form-row">
-        <label for="message">お問い合わせ内容</label>
-        <textarea id="message" name="message" rows="6" required placeholder="例：品目・点数（だいたい）／ご希望日時／市区町村（任意）"></textarea>
+        <label for="tel">電話番号（必須）</label>
+        <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：090-9018-5664" required>
+      </div>
+
+      <div class="form-row">
+        <label for="address">ご住所（任意）</label>
+        <input id="address" name="address" type="text" autocomplete="street-address" placeholder="例：大阪市東住吉区（詳細は後でOK）">
+      </div>
+
+      <div class="form-row">
+        <label for="message">お問い合わせ内容（必須）</label>
+        <textarea id="message" name="message" rows="6" required placeholder="例：品目・点数（だいたい）／ご希望日時／（住所は任意：市区町村だけでもOK）"></textarea>
       </div>
 
       <button class="btn btn--primary" type="submit">送信する</button>
@@ -106,7 +135,7 @@
         <h2>無料相談はこちら</h2>
         <p class="lead">写真がなくてもOK。文章だけでも相談できます。</p>
         <div class="cta-panel__buttons">
-          <a class="btn btn--primary" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener">友だち追加（LINE）</a>
+          <a class="btn btn--primary" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener noreferrer">友だち追加（LINE）</a>
           <a class="btn btn--outline" href="tel:09090185664">電話で相談（090-9018-5664）</a>
         </div>
         <p class="note">受付時間：<strong>7:00〜22:00</strong>　/　固定電話：<a href="tel:0666548738">06-6654-8738</a></p>
@@ -160,7 +189,7 @@
       </div>
       <div class="footer-contact__row">
         <span class="label">LINE</span>
-        <a href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener">友だち追加</a>
+        <a href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener noreferrer">友だち追加</a>
       </div>
     </div>
   </div>
@@ -171,7 +200,7 @@
 
 <!-- Mobile CTA bar -->
 <div class="cta-bar" role="region" aria-label="お問い合わせ（固定）">
-  <a class="cta-bar__btn cta-bar__btn--line" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener" aria-label="LINEで問い合わせ">
+  <a class="cta-bar__btn cta-bar__btn--line" href="https://lin.ee/e8Pu3CO" target="_blank" rel="noopener noreferrer" aria-label="LINEで問い合わせ">
     LINE
     <span class="cta-bar__sub">写真でもOK</span>
   </a>

@@ -535,7 +535,7 @@ details.faq summary::-webkit-details-marker{ display:none; }
   background: linear-gradient(180deg, #ffffff, #fbfcfe);
 }
 
-/* Reduce "テンプレ感" with subtle separators */
+/* Subtle separators for readability */
 .section h2::after{
   content:"";
   display:block;
