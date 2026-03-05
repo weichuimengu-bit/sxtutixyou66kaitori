@@ -27,9 +27,8 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="メニューを開く">
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__text">メニュー</span>
     </button>
 
     <nav class="site-nav" id="siteNav" aria-label="グローバルナビ">
@@ -109,18 +108,7 @@
       </div>
 
       <button class="btn btn--primary" type="submit">送信する</button>
-      <p class="note" id="formNote">送信先：<strong>FORM_ENDPOINT_HERE</strong></p>
-
-    <div class="card" style="margin-top:14px">
-      <h3 class="h3">フォーム送信先の設定（Formspree）</h3>
-      <ol class="bullets">
-        <li>Formspreeでフォームを作成 → エンドポイントURLを取得</li>
-        <li><code>FORM_ENDPOINT_HERE</code> を、あなたのURL（例：<code>https://formspree.io/f/xxxxxx</code>）に置換</li>
-      </ol>
-      <p class="muted">※送信先が未設定の場合は、送信できないようにしています（LINE/電話をご利用ください）。</p>
-    </div>
-
-    </form>
+</form>
   </div>
 </section>
 

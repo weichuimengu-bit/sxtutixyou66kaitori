@@ -2,10 +2,21 @@
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('siteNav');
   if (toggle && nav) {
+    const toggleText = toggle.querySelector('.nav-toggle__text');
+
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      if (toggleText) toggleText.textContent = open ? '閉じる' : 'メニュー';
+      nav.classList.toggle('open', open);
+    };
+
+    // initial state
+    setOpen(false);
+
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      nav.classList.toggle('open', !isOpen);
+      setOpen(!isOpen);
     });
 
     // Close nav when clicking outside (mobile)
@@ -14,10 +25,14 @@
       const target = e.target;
       if (target instanceof Element) {
         if (!nav.contains(target) && !toggle.contains(target)) {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+          setOpen(false);
         }
       }
+    });
+
+    // Close with ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
     });
   }
 
