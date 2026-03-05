@@ -42,7 +42,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const endpoint = (form.getAttribute("action") || ""); // contact.html の action にFormspreeエンドポイントを入れる
-      if (!endpoint || endpoint.includes("FORM_ENDPOINT_HERE")) {
+      if (!endpoint) {
         alert('フォーム送信先が未設定です。LINEまたは電話をご利用ください。');
         return;
       }
