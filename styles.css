@@ -566,3 +566,50 @@ details.faq summary::-webkit-details-marker{ display:none; }
 a, button{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+/* ===== Bottom CTA panel (all pages) ===== */
+.cta-panel{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:14px;
+  align-items:stretch;
+  background: rgba(255,255,255,.86);
+  border:1px solid rgba(229,231,235,.9);
+  border-radius:18px;
+  padding:16px;
+  box-shadow: var(--shadow);
+}
+.cta-panel__buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+.trust-legal{
+  display:grid;
+  gap:10px;
+}
+.trust-legal__item{
+  background: rgba(249,250,251,.85);
+  border:1px solid rgba(229,231,235,.9);
+  border-radius:14px;
+  padding:12px;
+}
+.trust-legal__label{
+  display:block;
+  color: var(--muted);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.06em;
+  margin-bottom:4px;
+}
+.trust-legal__value{
+  display:block;
+  color: var(--ink);
+  font-weight:900;
+  font-size:14px;
+  line-height:1.4;
+}
+@media (max-width: 880px){
+  .cta-panel{ grid-template-columns: 1fr; }
+}
