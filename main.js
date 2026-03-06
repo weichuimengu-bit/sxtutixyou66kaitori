@@ -1,66 +1,67 @@
+
 (() => {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('siteNav');
-  if (toggle && nav) {
-    const toggleText = toggle.querySelector('.nav-toggle__text');
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+  const label = document.querySelector(".nav-toggle__label");
 
-    const setOpen = (open) => {
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-      if (toggleText) toggleText.textContent = open ? '閉じる' : 'メニュー';
-      nav.classList.toggle('open', open);
-    };
-
-    // initial state
-    setOpen(false);
-
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      setOpen(!isOpen);
-    });
-
-    // Close nav when clicking outside (mobile)
-    document.addEventListener('click', (e) => {
-      if (!nav.classList.contains('open')) return;
-      const target = e.target;
-      if (target instanceof Element) {
-        if (!nav.contains(target) && !toggle.contains(target)) {
-          setOpen(false);
-        }
-      }
-    });
-
-    // Close with ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') setOpen(false);
+  if (toggle && nav && label) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      label.textContent = open ? "閉じる" : "メニュー";
     });
   }
 
-  // Optional contact form handler (requires endpoint)
-  const form = document.getElementById('contactForm');
+  const form = document.getElementById("contactForm");
   if (form) {
-    form.addEventListener('submit', async (e) => {
+    const name = document.getElementById("name");
+    const tel = document.getElementById("tel");
+    const message = document.getElementById("message");
+    const nameError = document.getElementById("nameError");
+    const telError = document.getElementById("telError");
+    const messageError = document.getElementById("messageError");
+    const success = document.getElementById("formSuccess");
+    const validateTel = (value) => /^[0-9\-\+\s]{8,}$/.test(value);
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const endpoint = (form.getAttribute("action") || ""); // contact.html の action にFormspreeエンドポイントを入れる
-      if (!endpoint) {
-        alert('送信できませんでした。LINEまたは電話をご利用ください。');
-        return;
+      let ok = true;
+      nameError.textContent = "";
+      telError.textContent = "";
+      messageError.textContent = "";
+      success.hidden = true;
+
+      if (!name.value.trim()) {
+        nameError.textContent = "お名前を入力してください。";
+        ok = false;
       }
-      const fd = new FormData(form);
+      if (!tel.value.trim()) {
+        telError.textContent = "電話番号を入力してください。";
+        ok = false;
+      } else if (!validateTel(tel.value.trim())) {
+        telError.textContent = "電話番号の形式を確認してください。";
+        ok = false;
+      }
+      if (!message.value.trim()) {
+        messageError.textContent = "お問い合わせ内容を入力してください。";
+        ok = false;
+      }
+      if (!ok) return;
+
       try {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          body: fd,
-          headers: { 'Accept': 'application/json' }
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
         });
-        if (res.ok) {
-          alert('送信しました。折り返しご連絡します。');
+        if (response.ok) {
           form.reset();
+          success.hidden = false;
         } else {
-          alert('送信に失敗しました。LINEまたは電話をご利用ください。');
+          alert("送信に失敗しました。LINEまたは電話をご利用ください。");
         }
-      } catch (err) {
-        alert('通信エラーが発生しました。LINEまたは電話をご利用ください。');
+      } catch {
+        alert("送信に失敗しました。LINEまたは電話をご利用ください。");
       }
     });
   }
